@@ -8,7 +8,6 @@ module.exports = class Configuration {
             'SALESFORCE_API_VERSION',
             'SALESFORCE_USERNAME',
             'SALESFORCE_PASSWORD',
-            'SALESFORCE_TOKEN',
             'PUB_SUB_ENDPOINT',
             'PUB_SUB_PROTO_FILE'
         ].forEach((varName) => {
@@ -32,7 +31,8 @@ module.exports = class Configuration {
     }
 
     static getSfSecuredPassword() {
-        return process.env.SALESFORCE_PASSWORD + process.env.SALESFORCE_TOKEN;
+        //return process.env.SALESFORCE_PASSWORD + process.env.SALESFORCE_TOKEN;
+        return process.env.SALESFORCE_PASSWORD;
     }
 
     static getPubSubEndpoint() {
