@@ -8,7 +8,7 @@ logs
 src/client/assets/dependencies
 
 # App config file
-.env
+#.env
 
 # Tooling files
 .vscode
