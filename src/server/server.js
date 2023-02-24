@@ -64,6 +64,9 @@ async function start() {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
             Order_Id__c: { string: orderId },
+            Payload_Field_1__c: 'TestPL1',
+            Payload_Field_2__c: 'Test PL2',
+            Comment__c: 'Comment',
             Status__c: { string: status }
         };
         await pubSub.publish(
