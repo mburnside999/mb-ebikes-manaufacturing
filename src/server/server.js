@@ -60,13 +60,16 @@ async function start() {
     // Handle incoming WS events
     wss.addMessageListener(async (message) => {
         const { orderId, status } = message.data;
+        const pl1 = 'xxx';
+        const pl2 = 'yyyy';
+        const comm = 'zzz';
         const eventData = {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
             Order_Id__c: { string: orderId },
-            Payload_Field_1__c: 'TestPL1',
-            Payload_Field_2__c: 'Test PL2',
-            Comment__c: 'Comment',
+            Payload_Field_1__c: { string: pl1 },
+            Payload_Field_2__c: { string: pl2 },
+            Comment__c: { string: comm },
             Status__c: { string: status }
         };
         await pubSub.publish(
