@@ -63,7 +63,7 @@ async function start() {
         const pl1 = 'Received Reseller Order Id=' + orderId;
         let tag = status === 'Draft' ? 'Rejected - ' : 'Approved -';
         const pl2 = tag + 'Status set to "' + status + '"';
-        const comm = 'Heroku Manufacturing Event';
+        const comm = 'Event source: eBikes Manufacturing';
         const eventData = {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
