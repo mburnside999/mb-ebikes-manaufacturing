@@ -60,8 +60,8 @@ async function start() {
     // Handle incoming WS events
     wss.addMessageListener(async (message) => {
         const { orderId, status } = message.data;
-        const pl1 = 'Manufacturing Payload 1';
-        const pl2 = 'Manufacturing Payload 2';
+        const pl1 = 'Received Reseller Order';
+        const pl2 = 'Ref: ' + orderId;
         const comm = 'Heroku Manufacturing Event';
         const eventData = {
             CreatedDate: Date.now(),
