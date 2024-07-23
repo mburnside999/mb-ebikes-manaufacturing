@@ -61,7 +61,7 @@ async function start() {
     wss.addMessageListener(async (message) => {
         const { orderId, status } = message.data;
         const pl1 = 'Processed Order: ' + orderId;
-        const pl2 = 'Status: ' + status;
+        const pl2 = 'Status set to: ' + status;
         const comm = 'Heroku Manufacturing Event';
         const eventData = {
             CreatedDate: Date.now(),
