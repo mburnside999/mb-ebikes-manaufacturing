@@ -61,9 +61,9 @@ async function start() {
     wss.addMessageListener(async (message) => {
         const { orderId, status } = message.data;
         const pl1 = 'eBikes Manufacturing Processed a Reseller Order';
-        let tag = status === 'Draft' ? 'Rejected - ' : 'Approved -';
-        const pl2 = tag + 'Id=' + orderId + ", Status='" + status + "'";
-        const comm = 'Event source: eBikes Manufacturing via PubAPI';
+        let tag = status === 'Draft' ? ' - [Rejected]' : ' - [Approved]';
+        const pl2 = 'Order Id=' + orderId + ", Status='" + status + "'" + tag;
+        const comm = 'Event source: eBikes Manufacturing via PubSub API';
         const nameval = orderId;
 
         const eventData = {
