@@ -64,6 +64,8 @@ async function start() {
         let tag = status === 'Draft' ? 'Rejected - ' : 'Approved -';
         const pl2 = tag + 'Status set to "' + status + '"';
         const comm = 'Event source: eBikes Manufacturing';
+        const nameval = 'Heroku';
+
         const eventData = {
             CreatedDate: Date.now(),
             CreatedById: sfClient.client.userInfo.id,
@@ -71,7 +73,8 @@ async function start() {
             Payload_Field_1__c: { string: pl1 },
             Payload_Field_2__c: { string: pl2 },
             Comment__c: { string: comm },
-            Status__c: { string: status }
+            Status__c: { string: status },
+            Name__c: { string: nameval }
         };
         await pubSub.publish(
             MANUFACTURING_PE_TOPIC,
